@@ -1,2 +1,3 @@
-# gh-proxy
- 
+### 依赖
+
+> pyenv

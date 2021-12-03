@@ -1,0 +1,8 @@
+# pip install -i https://mirrors.aliyun.com/pypi/simple/ -r ./requirements.txt
+# pip install -r ./requirements.txt
+Flask
+gunicorn
+greenlet==0.4.17
+meinheld==1.0.2
+requests
+multiprocess

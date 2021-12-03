@@ -1,0 +1,15 @@
+[Unit]
+Description=Prometheus
+After=network-online.target
+
+[Service]
+WorkingDirectory=/opt/gh-proxy
+Environment="PATH=/root/.pyenv/versions/3.9.7/envs/env-3.9.7-gh-proxy/bin"
+ExecStart=/root/.pyenv/versions/3.9.7/envs/env-3.9.7-gh-proxy/bin/gunicorn -c gunicorn.py app:app >log.txt 2>&1 &
+ExecReload=/bin/kill -s HUP 
+ExecStop=/bin/kill -s TERM 
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
